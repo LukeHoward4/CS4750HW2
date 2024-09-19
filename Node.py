@@ -7,10 +7,14 @@ class Node():
 
     def get_parent(self):
         return self.__parentNode
-
+    
     def get_path_cost(self):
         return self.__pathCost
-
+    def getState(self):
+        return self.__state
+    def getAction(self):
+        return self.__action
+    
 def calculate_path_cost(node):
     total_cost = 0
     while node is not None:
