@@ -17,26 +17,21 @@ class PriorityQueue:
         return heapq.heappop(self.elements)[1]
 
 def uniform_cost_graph_search(initial_state):
-    # Initialize the closed set and the priority queue (fringe)
     closed = set()
     fringe = PriorityQueue()
     
-    # Create the initial node with a path cost of 0, action None, and depth 0
     initial_node = Node(None, initial_state, None, 0, 0)
     
-    # Put the initial node into the fringe with priority 0 (initial path cost)
     fringe.put(initial_node, 0)
     
     start_time = time.time()
     
     expanded_count = 0
-    generated_count = 1  # Initial node is generated
+    generated_count = 1  
     
     while not fringe.empty():
-        # Get the node with the lowest path cost from the fringe
         current_node = fringe.get()
         
-        # Check if the goal is reached ( all dirt has been cleaned)
         if not current_node.getState()['dirt']: 
             end_time = time.time()
             execution_time = end_time - start_time
