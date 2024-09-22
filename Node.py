@@ -25,7 +25,15 @@ def calculate_path_cost(node):
         total_cost += node.get_path_cost()
         node = node.get_parent()
     return total_cost
-    
+def findSequence(node):
+    actionList = []
+    while node is not None:
+        actionList.append(node.getAction())
+        node = node.get_parent()
+    actionList.reverse()
+    actionList.pop(0)
+    return actionList
+
 def expand(current):
     successors = []
     state = current.getState()
