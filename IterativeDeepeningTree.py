@@ -9,21 +9,29 @@ def iterativeDeepeningTreeSearch(startNode):
     firstFive = 1
     while(limit <= 16):
         fringe = [startNode]
+        #Fringe begins at the starter node
         print('limit = ' + str(limit))
+        #Tracking the limit so user knows that program is still running
         while(fringe):
             current = fringe[-1]
+            #Pulling from the fringe using LIFO
             if(current.getDepth() < limit):
+                #Only expand if expanded nodes will be at or below limit
                 newNodes = Node.expand(current)
                 expanded+=1
                 if(firstFive <= 5):
+                    #Recording the states of the first five expanded nodes.
                     print('State of node ' + str(firstFive) + ': ' + str(current.getState()))
                     firstFive+= 1
                 for node in newNodes:
+                    #Adding new nodes to generated
                     generated+=1
                     if(not node.getState()['dirt']):
+                        #checking to see if goal state achieved
                         displayStats(start, generated, expanded)
                         return node
                     fringe.append(node)
+                    
             fringe.remove(current)                  
         limit += 1
     displayStats(start, generated, expanded)
