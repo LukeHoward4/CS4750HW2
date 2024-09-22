@@ -16,6 +16,8 @@ class Node():
         return self.__action
     def getDepth(self):
         return self.__depth
+    def __lt__(self, other):
+        return self.__pathCost < other.get_path_cost() #for comparison of nodes based on path cost
     
 def calculate_path_cost(node):
     total_cost = 0
