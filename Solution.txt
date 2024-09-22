@@ -1,5 +1,55 @@
+Names: Luke Howard, Trevontae' Haughton, Navi Seth
+
+Description: Our solutions were all written in python. 
+A Node class was created and used for all three algorithms.
+An expand function was made to expand nodes. It expands with the actions: up, down, left, right, and suck.
+The expand function ensures that no nodes will be expanded outside of the 4x5 grid.
+The state of each node is represented with a dictionary, storing the keys 'pos' and 'dirt'
+'pos' is a two number list holding the current location of the vacuum
+'dirt' is a lit of two number lists holding all locations of dirt
+
+
+
+
+
 1. Uniform Cost Graph Solution:
 
 Instance #1 Result: {'solution': ['up', 'suck', 'down', 'down', 'right', 'up', 'right', 'suck', 'down', 'down', 'right', 'up', 'suck'], 'cost': 9.700000000000001, 'moves': 13, 'expanded': 34, 'generated': 144, 'time': 0.007500648498535156}
 
 Instance #2 Result: {'solution': ['up', 'up', 'left', 'down', 'suck', 'down', 'right', 'up', 'up', 'suck', 'down', 'down', 'down', 'right', 'up', 'suck', 'up', 'right', 'suck'], 'cost': 14.400000000000002, 'moves': 19, 'expanded': 121, 'generated': 506, 'time': 0.003455638885498047}
+
+
+2. Iterative Deepening Tree Solution:
+The iterative deepening search function uses levels and DFS to search for a solution.
+Our solution caps off at 16 levels to ensure that if there is not a solution, the algorithm does not run forever.
+If a solution is found, the node at the solution state is returned.
+If no solution is found in 16 levels, 0 is returned.
+
+Instance #1 Result:
+First 5 expanded Nodes:
+State of node 1: {'pos': [2, 2], 'dirt': [[1, 2], [2, 4], [3, 5]]}
+State of node 2: {'pos': [2, 2], 'dirt': [[1, 2], [2, 4], [3, 5]]}
+State of node 3: {'pos': [2, 2], 'dirt': [[1, 2], [2, 4], [3, 5]]}
+State of node 4: {'pos': [3, 2], 'dirt': [[1, 2], [2, 4], [3, 5]]}
+State of node 5: {'pos': [1, 2], 'dirt': [[1, 2], [2, 4], [3, 5]]}
+solution: ['up', 'suck', 'down', 'right', 'right', 'suck', 'down', 'right', 'suck']
+Moves: 9
+Nodes generated: 707559
+Nodes expanded: 162517
+Path cost: 6.7
+Time taken: 2.468 seconds
+
+Instance #2 Result:
+First 5 expanded Nodes:
+State of node 1: {'pos': [3, 2], 'dirt': [[1, 2], [2, 1], [2, 4], [3, 3]]} (start)
+State of node 2: {'pos': [3, 2], 'dirt': [[1, 2], [2, 1], [2, 4], [3, 3]]} (start)
+State of node 3: {'pos': [3, 2], 'dirt': [[1, 2], [2, 1], [2, 4], [3, 3]]} (suck)
+State of node 4: {'pos': [4, 2], 'dirt': [[1, 2], [2, 1], [2, 4], [3, 3]]} (down)
+State of node 5: {'pos': [2, 2], 'dirt': [[1, 2], [2, 1], [2, 4], [3, 3]]} (up)
+solution: ['right', 'suck', 'up', 'right', 'suck', 'up', 'left', 'left', 'suck', 'down', 'left', 'suck']
+Moves: 12
+Nodes generated: 70070257
+Nodes expanded: 16105637
+path cost: 9.5
+Time taken: 279.820 seconds
+

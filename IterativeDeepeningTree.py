@@ -7,7 +7,7 @@ def iterativeDeepeningTreeSearch(startNode):
     expanded = 0
     generated = 1
     firstFive = 1
-    while(limit <= 12):
+    while(limit <= 16):
         fringe = [startNode]
         print('limit = ' + str(limit))
         while(fringe):
