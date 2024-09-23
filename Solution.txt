@@ -53,3 +53,38 @@ Nodes expanded: 16105637
 path cost: 9.5
 Time taken: 279.820 seconds
 
+
+
+3. Uniform Cost Tree Solution:
+***
+The uniform_cost_tree_search function implements the tree search using a priority queue (fringe), where nodes with the lowest cost are expanded first.
+***
+
+SCENARIO #1
+First 5 expanded Nodes:
+State of node 1: {'pos': [2, 2], 'dirt': [[1, 2], [2, 4], [3, 5]]}
+State of node 2: {'pos': [3, 2], 'dirt': [[1, 2], [2, 4], [3, 5]]}
+State of node 3: {'pos': [1, 2], 'dirt': [[1, 2], [2, 4], [3, 5]]}
+State of node 4: {'pos': [2, 3], 'dirt': [[1, 2], [2, 4], [3, 5]]}
+State of node 5: {'pos': [2, 1], 'dirt': [[1, 2], [2, 4], [3, 5]]}
+Solution: ['up', 'suck', 'down', 'right', 'right', 'suck', 'down', 'right', 'suck']
+Moves: 9
+Nodes generated: 107
+Nodes expanded: 90
+Path cost: 6.7
+Time taken: 0.002 seconds
+
+
+SCENARIO #2
+First 5 expanded Nodes:
+State of node 1: {'pos': [3, 2], 'dirt': [[1, 2], [2, 1], [2, 4], [3, 3]]}
+State of node 2: {'pos': [4, 2], 'dirt': [[1, 2], [2, 1], [2, 4], [3, 3]]}
+State of node 3: {'pos': [2, 2], 'dirt': [[1, 2], [2, 1], [2, 4], [3, 3]]}
+State of node 4: {'pos': [3, 3], 'dirt': [[1, 2], [2, 1], [2, 4], [3, 3]]}
+State of node 5: {'pos': [3, 1], 'dirt': [[1, 2], [2, 1], [2, 4], [3, 3]]}
+Solution: ['right', 'suck', 'up', 'right', 'suck', 'up', 'left', 'left', 'suck', 'down', 'left', 'suck']
+Moves: 12
+Nodes generated: 300
+Nodes expanded: 278
+Path cost: 9.5
+Time taken: 0.008 seconds
