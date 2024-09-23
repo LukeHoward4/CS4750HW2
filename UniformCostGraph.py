@@ -1,7 +1,6 @@
 import heapq
 import time
-from Node import Node, calculate_path_cost, expand  
-
+from Node import Node, calculate_path_cost, expand
 
 class PriorityQueue:
     def __init__(self):
@@ -27,7 +26,9 @@ def uniform_cost_graph_search(initial_state):
     start_time = time.time()
     
     expanded_count = 0
-    generated_count = 1  
+    generated_count = 1
+    
+    expanded_states = []  # To store the states of the first five expanded nodes
     
     while not fringe.empty():
         current_node = fringe.get()
@@ -42,7 +43,8 @@ def uniform_cost_graph_search(initial_state):
                 "moves": len(solution),
                 "expanded": expanded_count,
                 "generated": generated_count,
-                "time": execution_time
+                "time": execution_time,
+                "first_five_expanded_states": expanded_states  # Adding the first five expanded states to the result
             }
         
         # Checking the state by the position of the agent and the dirt
@@ -50,12 +52,16 @@ def uniform_cost_graph_search(initial_state):
 
         # Checking if the state has been visited before, if no then expanding it
         if state_tuple not in closed:
-            closed.add(state_tuple)  
-            expanded_count += 1  # We are expanding this node
+            closed.add(state_tuple)
+            expanded_count += 1
+            
+            # Recording the first five expanded states
+            if len(expanded_states) < 5:
+                expanded_states.append(current_node.getState())
             
             # Expand the node and add its children to the priority queue
-            for child in expand(current_node):  
-                generated_count += 1  
+            for child in expand(current_node):
+                generated_count += 1
                 fringe.put(child, child.get_path_cost())  # Insert child into the fringe based on its path cost
     
     return None 
@@ -84,5 +90,13 @@ initial_state_2 = {
 result_1 = uniform_cost_graph_search(initial_state_1)
 result_2 = uniform_cost_graph_search(initial_state_2)
 
-print("Instance #1 Result:", result_1)
-print("Instance #2 Result:", result_2)
+# Function to print results with each key-value on a new line
+def print_result(result, instance_name):
+    print(f"{instance_name} Result:")
+    for key, value in result.items():
+        print(f"{key}: {value}")
+    print("\n")  # Extra line for readability
+
+# Print both results in the desired format
+print_result(result_1, "Instance #1")
+print_result(result_2, "Instance #2")
