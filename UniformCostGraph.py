@@ -66,7 +66,7 @@ def uniform_cost_graph_search(initial_state):
     
     return None 
 
-# Reconstruct the solution path from the goal node
+# Reconstruct the solution path from the goal node -> used ChatGPT for the reconstruction as I was getting an error
 def reconstruct_solution(node):
     actions = []
     total_cost = 0
@@ -90,6 +90,7 @@ initial_state_2 = {
 result_1 = uniform_cost_graph_search(initial_state_1)
 result_2 = uniform_cost_graph_search(initial_state_2)
 
+#used ChatGPT for printing the solution in a clean manner
 def print_result(result, instance_name):
     print(f"{instance_name} Result:")
     for key, value in result.items():
