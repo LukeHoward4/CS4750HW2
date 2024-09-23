@@ -44,7 +44,7 @@ def uniform_cost_graph_search(initial_state):
                 "expanded": expanded_count,
                 "generated": generated_count,
                 "time": execution_time,
-                "first_five_expanded_states": expanded_states  # Adding the first five expanded states to the result
+                "first_five_expanded_states": expanded_states  
             }
         
         # Checking the state by the position of the agent and the dirt
