@@ -14,9 +14,54 @@ The state of each node is represented with a dictionary, storing the keys 'pos' 
 
 1. Uniform Cost Graph Solution:
 
-Instance #1 Result: {'solution': ['up', 'suck', 'down', 'down', 'right', 'up', 'right', 'suck', 'down', 'down', 'right', 'up', 'suck'], 'cost': 9.700000000000001, 'moves': 13, 'expanded': 34, 'generated': 144, 'time': 0.007500648498535156}
+Instance #1 Result:
+solution: ['up', 'suck', 'down', 'down', 'right', 'up', 'right', 'suck', 'down', 'down', 'right', 'up', 'suck']
+cost: 9.700000000000001
+moves: 13
+expanded: 34
+generated: 144
+time: 0.0010044574737548828
+first_five_expanded_states:
+  Expanded Node 1:
+    Position: [2, 2]
+    Dirt: [[1, 2], [2, 4], [3, 5]]
+  Expanded Node 2:
+    Position: [3, 2]
+    Dirt: [[1, 2], [2, 4], [3, 5]]
+  Expanded Node 3:
+    Position: [4, 2]
+    Dirt: [[1, 2], [2, 4], [3, 5]]
+  Expanded Node 4:
+    Position: [1, 2]
+    Dirt: [[1, 2], [2, 4], [3, 5]]
+  Expanded Node 5:
+    Position: [1, 2]
+    Dirt: [[2, 4], [3, 5]]
 
-Instance #2 Result: {'solution': ['up', 'up', 'left', 'down', 'suck', 'down', 'right', 'up', 'up', 'suck', 'down', 'down', 'down', 'right', 'up', 'suck', 'up', 'right', 'suck'], 'cost': 14.400000000000002, 'moves': 19, 'expanded': 121, 'generated': 506, 'time': 0.003455638885498047}
+
+Instance #2 Result:
+solution: ['up', 'up', 'left', 'down', 'suck', 'down', 'right', 'up', 'up', 'suck', 'down', 'down', 'down', 'right', 'up', 'suck', 'up', 'right', 'suck']
+cost: 14.400000000000002
+moves: 19
+expanded: 121
+generated: 506
+time: 0.0020020008087158203
+first_five_expanded_states:
+  Expanded Node 1:
+    Position: [3, 2]
+    Dirt: [[1, 2], [2, 1], [2, 4], [3, 3]]
+  Expanded Node 2:
+    Position: [4, 2]
+    Dirt: [[1, 2], [2, 1], [2, 4], [3, 3]]
+  Expanded Node 3:
+    Position: [2, 2]
+    Dirt: [[1, 2], [2, 1], [2, 4], [3, 3]]
+  Expanded Node 4:
+    Position: [1, 2]
+    Dirt: [[1, 2], [2, 1], [2, 4], [3, 3]]
+  Expanded Node 5:
+    Position: [1, 2]
+    Dirt: [[2, 1], [2, 4], [3, 3]]
 
 
 2. Iterative Deepening Tree Solution:
