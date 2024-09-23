@@ -1,6 +1,6 @@
-Names: Luke Howard, Trevontae' Haughton, Navi Seth
+Names: Luke Howard, Trevontae' Haughton, Vani Seth
 
-Description: Our solutions were all written in python. 
+Description: Our solutions were all written in Python. 
 A Node class was created and used for all three algorithms.
 An expand function was made to expand nodes. It expands with the actions: up, down, left, right, and suck.
 The expand function ensures that no nodes will be expanded outside of the 4x5 grid.
