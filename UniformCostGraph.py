@@ -90,13 +90,18 @@ initial_state_2 = {
 result_1 = uniform_cost_graph_search(initial_state_1)
 result_2 = uniform_cost_graph_search(initial_state_2)
 
-# Function to print results with each key-value on a new line
 def print_result(result, instance_name):
     print(f"{instance_name} Result:")
     for key, value in result.items():
-        print(f"{key}: {value}")
-    print("\n")  # Extra line for readability
+        if key == "first_five_expanded_states":
+            print(f"{key}:")
+            for i, state in enumerate(value):
+                print(f"  Expanded Node {i+1}:")
+                print(f"    Position: {state['pos']}")
+                print(f"    Dirt: {state['dirt']}")
+        else:
+            print(f"{key}: {value}")
+    print("\n")  
 
-# Print both results in the desired format
 print_result(result_1, "Instance #1")
 print_result(result_2, "Instance #2")
